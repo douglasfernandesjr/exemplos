@@ -1,0 +1,31 @@
+﻿
+@{
+	ViewBag.Title = "Exemplo8";
+}
+
+@section scripts {
+	<script src="~/Scripts/moment.min.js"></script>
+	<script src="~/Scripts/angular.min.js"></script>
+	<script src="~/Scripts/angular/exemplo8-controller.js"></script>
+}
+
+<div class="panel panel-default" ng-controller="Exemplo8Controller">
+	<div class="panel-body" ng-form="form">
+		<div class="row">
+			<input ng-model="numero" name="num" numero-impar />
+			<div ng-show="form.num.$error.numeroImpar">Não é um numero impar</div>
+		</div>
+		<div class="row">
+			<input type="text" ng-model="data" name="dt" campo-data />
+			<div ng-show="form.dt.$error.data">Data inválida</div>
+			{{data}}
+		</div>
+		<div class="row">
+			<input ng-model="nome" name="nome" nome-unico />
+			<div ng-show="form.nome.$pending">Verificando nome</div>
+			<div ng-show="form.nome.$error.nomeUnico">Nome já existe</div>
+		</div>
+	
+	</div>
+</div>
+

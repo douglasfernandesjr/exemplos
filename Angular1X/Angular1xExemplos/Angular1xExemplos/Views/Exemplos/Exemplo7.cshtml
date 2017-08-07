@@ -1,0 +1,23 @@
+﻿
+@{
+	ViewBag.Title = "Exemplo2";
+}
+
+@section scripts {
+	<script src="~/Scripts/angular.min.js"></script>
+	<script src="~/Scripts/angular/exemplo7-controller.js"></script>
+}
+
+<div class="panel panel-default" ng-controller="Exemplo7Controller">
+	<div class="panel-body">
+		<div class="row">
+			<ng-include src="template"></ng-include>
+		</div>
+		<div class="row">
+			<div class="col-sm-12 form-group text-right">
+				<div class="btn btn-default" ng-click="CarregarAjax()">Executar Ajax</div>
+			</div>
+		</div>
+	</div>
+</div>
+

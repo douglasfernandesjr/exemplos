@@ -1,0 +1,27 @@
+﻿
+@{
+	ViewBag.Title = "Exemplo4";
+}
+
+@section scripts {
+	<script src="~/Scripts/angular.min.js"></script>
+	<script src="~/Scripts/angular/exemplo4-controller.js"></script>
+}
+
+
+<script type="text/ng-template" id="UserLayoutAlternativo">
+	<div class="col-sm-4 text-center">
+		<h3>{{usuario.nome}} </h3>
+		<h4>{{usuario.cidade}}</h4>
+		<img src="{{usuario.imagem}}" alt="usuario.nome" class="img-thumbnail" height="64" width="64">
+	</div>
+</script>
+
+<div class="panel panel-default" ng-controller="Exemplo4Controller">
+	<div class="panel-body">
+		<div class="row">
+			<div ng-include="'/Content/templates/UserLayout.html'"></div>
+			<div ng-include="'UserLayoutAlternativo'"></div>
+		</div>
+	</div>
+</div>

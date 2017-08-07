@@ -1,0 +1,45 @@
+﻿
+@{
+	ViewBag.Title = "Exemplo5";
+}
+
+@section scripts {
+	<script src="~/Scripts/angular.min.js"></script>
+	<script src="~/Scripts/angular/exemplo5-controller.js"></script>
+}
+
+<div ng-controller="Exemplo5Controller">
+	<div class="panel panel-default">
+		<div class="panel-body">
+			{{usuario.nome}}
+			<div class="row">
+				<render-usuario1></render-usuario1>
+				<div render-usuario1></div>
+				<div class="render-usuario1"></div>
+				<!-- directive: render-usuario1 -->
+			</div>
+		</div>
+	</div>
+	<div class="panel panel-default">
+		<div class="panel-body">
+			<div class="row">
+				<render-usuario2></render-usuario2>
+			</div>
+		</div>
+	</div>
+	<div class="panel panel-default">
+		<div class="panel-body">
+			<div class="row">
+				<render-usuario3 usr="usuario"></render-usuario3>
+				<render-usuario3 usr="usuario2"></render-usuario3>
+			</div>
+		</div>
+	</div>
+	<div class="panel panel-default">
+		<div class="panel-body">
+			<div class="row">
+				<render-usuario4 usuario="usuario" img="/Content/img/generic-user-2.png" click="funcaoParaClicar(usuario.imagem)"></render-usuario4>
+			</div>
+		</div>
+	</div>
+</div>

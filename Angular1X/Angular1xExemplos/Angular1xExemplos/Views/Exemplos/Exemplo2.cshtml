@@ -1,0 +1,61 @@
+﻿
+@{
+	ViewBag.Title = "Exemplo2";
+}
+
+@section scripts {
+	<script src="~/Scripts/angular.min.js"></script>
+	<script src="~/Scripts/angular/exemplo2-controller.js"></script>
+}
+
+<div class="panel panel-default" ng-controller="Exemplo2Controller">
+	<div class="panel-body">
+		<div class="row" ng-form="formCadastro">
+			<div class="col-sm-12">
+				<div class="form-group col-sm-3" ng-class="{'has-error':formCadastro.nome.$invalid && formCadastro.nome.$dirty}">
+					<label class="control-label">Nome</label>	<input type="text" name="nome" required ng-model="form.nome" class="form-control" />
+					<div ng-show="formCadastro.nome.$error.required && formCadastro.nome.$dirty">Campo Obrigatório</div>
+				</div>
+				<div class="form-group col-sm-3" ng-class="{'has-error':formCadastro.sobrenome.$invalid}">
+					<label class="control-label">Sobrenome</label><input type="text" name="sobrenome" required ng-model="form.sobrenome" class="form-control" />
+				</div>
+				<div class="form-group col-sm-3" ng-class="{'has-error':formCadastro.idade.$invalid}">
+					<label class="control-label">Idade</label><input type="text" name="idade" required ng-model="form.idade" class="form-control" />
+				</div>
+				<div class="form-group col-sm-3" ng-class="{'has-error':formCadastro.cidade.$invalid}">
+					<label class="control-label">Cidade</label><input type="text" name="cidade" required ng-model="form.cidade" class="form-control" />
+				</div>
+			</div>
+			<div class="col-sm-12 form-group text-right">
+				<div class="btn btn-default" ng-click="Add(formCadastro)">Adicionar</div>
+			</div>
+		</div>
+		<div class="row">
+			<input ng-model="pesquisar" />
+			<table class="table table-bordered">
+				<thead>
+					<tr>
+						<td ng-click="_order = '-nome'">Nome</td>
+						<td ng-click="_order = '-sobrenome'">Sobrenome</td>
+						<td ng-click="_order = '-idade'">idade</td>
+						<td ng-click="_order = '-cidade'">cidade</td>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="linha in Lista | filter:pesquisar | orderBy: _order">
+						<td>{{linha.nome}}</td>
+						<td>{{linha.sobrenome}}</td>
+						<td>{{linha.idade}}</td>
+						<td>{{linha.cidade}}</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="row">
+			<div class="col-sm-12 form-group text-right">
+				<div class="btn btn-default" ng-click="CarregarAjax()">Executar Ajax</div>
+			</div>
+		</div>
+	</div>
+</div>
+

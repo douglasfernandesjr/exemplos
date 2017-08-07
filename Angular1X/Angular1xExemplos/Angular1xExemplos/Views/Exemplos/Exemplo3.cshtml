@@ -1,0 +1,19 @@
+﻿
+@{
+	ViewBag.Title = "Exemplo3";
+}
+
+@section scripts {
+	<script src="~/Scripts/angular.min.js"></script>
+	<script src="~/Scripts/angular/exemplo3-controller.js"></script>
+}
+
+<div class="panel panel-default" ng-controller="Exemplo3Controller">
+	<div class="panel-body">
+		<div class="row col-lg-12">Hoje é {{dataHoje | date:'dd/MM/yyyy HH:mm:ss Z'}}</div>
+		<div class="row col-lg-12">Dinheiro Formatado {{dinheiro | currency:"US$"}}</div>
+		<div class="row col-lg-12">Dinheiro Formatado {{dinheiro | DinheiroBR}}</div>
+		<div class="row col-lg-12" ng-bind="(mensagem | uppercase)"></div>
+	</div>
+</div>
+

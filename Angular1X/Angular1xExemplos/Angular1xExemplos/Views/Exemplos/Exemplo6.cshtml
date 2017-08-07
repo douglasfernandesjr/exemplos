@@ -1,0 +1,40 @@
+﻿
+@{
+	ViewBag.Title = "Exemplo6";
+}
+
+@section scripts {
+	<script src="~/Scripts/angular.min.js"></script>
+	<script src="~/Scripts/angular/exemplo6-controller.js"></script>
+}
+
+<div ng-controller="Exemplo6Controller">
+	<div class="panel panel-default">
+		<div class="panel-body">
+			<div class="row" clicar-fora="ClickFora()">
+				<render-usuario5 usr="usuario"></render-usuario5>
+			</div>
+			<div>
+				<div class="form-group col-xs-3">
+					<div class="input-group">
+						<input on-enter="ClickEnter()" type="text" class="form-control" id="exampleInputAmount" placeholder="Amount">
+						<div class="input-group-addon"><span class="glyphicon glyphicon-search"></span></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="panel panel-default">
+		<div class="panel-body">
+			<div class="row" >
+				<render-usuario6 usr="usuario">
+					<h1>{{usuario.nome}}</h1>
+				</render-usuario6>
+				<render-usuario6 usr="usuario">
+					<h3><span class="glyphicon glyphicon-user"></span>{{usuario.nome}}</h3>
+				</render-usuario6>
+			</div>
+		</div>
+	</div>
+</div>

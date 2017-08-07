@@ -1,0 +1,19 @@
+﻿
+@{
+	ViewBag.Title = "Exemplo1";
+}
+
+@section scripts {
+	<script src="~/Scripts/angular.min.js"></script>
+	<script src="~/Scripts/angular/exemplo1-controller.js"></script>
+}
+
+<div class="panel panel-default" ng-controller="Exemplo1Controller">
+	<div class="panel-body">
+		<label>Nome:</label>
+		<input type="text" ng-model="nome" placeholder="Digite seu nome aqui">
+		<hr>
+		<h3>Olá {{nome}}!</h3>
+	</div>
+</div>
+
