@@ -11,3 +11,11 @@
     {{item}} 
   </li>
 </ul>
+
+<h1>Com Observable</h1>
+
+<input type="text" [formControl]="term"/>
+<span *ngIf="semResultado">Nenhum resultado encontrado</span>
+<ul *ngIf="!semResultado">
+  <li *ngFor="let item of items">{{item.name}}</li>
+</ul>
