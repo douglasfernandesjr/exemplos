@@ -1,0 +1,13 @@
+
+<select [(ngModel)]="lang" (change)="updateLista()" >
+<option value="pt">PT</option>
+<option value="en">EN</option>
+<option value="es">ES</option>
+<option value="fr">FR</option>
+</select>
+
+<ul >
+  <li *ngFor="let item of lista">
+    {{item}} 
+  </li>
+</ul>

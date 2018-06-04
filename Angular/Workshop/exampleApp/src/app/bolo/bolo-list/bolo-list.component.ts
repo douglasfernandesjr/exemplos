@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+
 @Component({
   selector: 'app-bolo-list',
   templateUrl: './bolo-list.component.html',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BoloListComponent implements OnInit {
 
-  constructor() { }
+  lista: string[];
+  showOne: Boolean;
+
+  constructor() {
+    this.showOne = false;
+   }
 
   ngOnInit() {
-  }
+    this.lista =  ['Cenoura', 'Leite Ninho', 'Chocolate'];
+   }
 
 }

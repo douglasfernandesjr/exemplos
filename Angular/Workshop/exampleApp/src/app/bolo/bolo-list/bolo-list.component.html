@@ -1,3 +1,16 @@
 <p>
   bolo-list works!
 </p>
+<input type="checkbox" [(ngModel)]="showOne" > Show One
+<ul *ngIf="showOne">
+  <h3>
+    {{lista[0]}}
+  </h3>
+</ul>
+<ul *ngIf="!showOne">
+  <li *ngFor="let item of lista">
+    {{item}}
+  </li>
+</ul>
+
+<button [disabled]="showOne">Salvar</button>
