@@ -5,6 +5,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class PesquisaPaisesService {
+
   private baseUrl = 'https://restcountries.eu/rest/v2/lang/';
 
   constructor(private http: HttpClient) {

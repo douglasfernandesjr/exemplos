@@ -5,7 +5,7 @@ import { Pais } from 'src/app/paises/pais';
 @Component({
   selector: 'app-lista-paises',
   templateUrl: './lista-paises.component.html',
-  styleUrls: ['./lista-paises.component.css']
+  styleUrls: ['./lista-paises.component.css'],
 })
 export class ListaPaisesComponent implements OnInit {
   lista: string[];
