@@ -1,21 +1,23 @@
+<div class="col">
+  <select [(ngModel)]="lang" (change)="updateLista()">
+    <option value="pt">PT</option>
+    <option value="en">EN</option>
+    <option value="es">ES</option>
+    <option value="fr">FR</option>
+  </select>
 
-<select [(ngModel)]="lang" (change)="updateLista()" >
-<option value="pt">PT</option>
-<option value="en">EN</option>
-<option value="es">ES</option>
-<option value="fr">FR</option>
-</select>
+  <ul>
+    <li *ngFor="let item of lista">
+      {{item}}
+    </li>
+  </ul>
+</div>
+<div class="col">
+  <h1>Com Observable</h1>
 
-<ul >
-  <li *ngFor="let item of lista">
-    {{item}} 
-  </li>
-</ul>
-
-<h1>Com Observable</h1>
-
-<input type="text" [formControl]="term"/>
-<span *ngIf="semResultado">Nenhum resultado encontrado</span>
-<ul *ngIf="!semResultado">
-  <li *ngFor="let item of items">{{item.name}}</li>
-</ul>
+  <input type="text" [formControl]="term" />
+  <h3 *ngIf="semResultado">Nenhum resultado encontrado</h3>
+  <ul *ngIf="!semResultado">
+    <li *ngFor="let item of items">{{item.name}}</li>
+  </ul>
+</div>

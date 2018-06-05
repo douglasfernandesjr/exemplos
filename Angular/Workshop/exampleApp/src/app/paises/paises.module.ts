@@ -7,7 +7,7 @@ import { PesquisaPaisesService } from 'src/app/paises/pesquisa-paises.service';
 
 @NgModule({
   imports: [
-    CommonModule, HttpClientModule, FormsModule,ReactiveFormsModule
+    CommonModule, HttpClientModule, FormsModule, ReactiveFormsModule
   ],
   declarations: [ListaPaisesComponent],
   exports: [ListaPaisesComponent]

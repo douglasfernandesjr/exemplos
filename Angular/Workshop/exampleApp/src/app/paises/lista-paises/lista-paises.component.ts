@@ -32,8 +32,8 @@ export class ListaPaisesComponent implements OnInit {
 
     this.term.valueChanges
       .pipe(
-        debounceTime(400),
         filter(term => term.length > 3),
+        debounceTime(400),
         distinctUntilChanged(),
         mergeMap(
           (term) => {
@@ -46,7 +46,7 @@ export class ListaPaisesComponent implements OnInit {
               );
           }
         ),
-    ).subscribe(paises =>  { this.semResultado = false; this.items = paises});
+    ).subscribe(paises =>  { this.semResultado = false; this.items = paises; });
 
     //https://blog.thoughtram.io/angular/2016/01/06/taking-advantage-of-observables-in-angular2.html  
     //https://blog.angularindepth.com/switchmap-bugs-b6de69155524          
