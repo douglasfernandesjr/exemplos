@@ -9,6 +9,8 @@ import { PaisesModule } from './paises/paises.module';
 import { ListaPaisesComponent } from './paises/lista-paises/lista-paises.component';
 import { RouterModule, Routes } from '@angular/router';
 import { PagLayoutComponent } from './layout/pag-layout/pag-layout.component';
+import { TemplateDrivenComponent } from './forms/template-driven/template-driven.component';
+import { ModelDrivenComponent } from './forms/model-driven/model-driven.component';
 
 const appRoutes: Routes = [{
   path: '',
@@ -16,6 +18,7 @@ const appRoutes: Routes = [{
   children: [
     { path: 'bolo', component: BoloListComponent },
     { path: 'paises', component: ListaPaisesComponent },
+    { path: 'template', component: TemplateDrivenComponent },
   ]
 }];
 
@@ -23,7 +26,9 @@ const appRoutes: Routes = [{
   declarations: [
     AppComponent,
     BoloListComponent,
-    PagLayoutComponent
+    PagLayoutComponent,
+    TemplateDrivenComponent,
+    ModelDrivenComponent
   ],
   imports: [
     BrowserModule, FormsModule, PaisesModule, BrowserAnimationsModule,
