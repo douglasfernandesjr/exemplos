@@ -11,11 +11,15 @@ export class TemplateDrivenComponent implements OnInit {
   model: FormModel1;
 
   constructor() {
-    
-    this.model = new FormModel1();
+      this.model = new FormModel1();
   }
 
   ngOnInit() {
+
+  }
+
+  public log(item: any ) {
+    console.log(item);
 
   }
 
