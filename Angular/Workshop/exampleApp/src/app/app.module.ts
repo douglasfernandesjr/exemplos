@@ -11,6 +11,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { PagLayoutComponent } from './layout/pag-layout/pag-layout.component';
 import { TemplateDrivenComponent } from './forms/template-driven/template-driven.component';
 import { ModelDrivenComponent } from './forms/model-driven/model-driven.component';
+import { LocalFormModule } from './forms/form.module';
 
 const appRoutes: Routes = [{
   path: '',
@@ -19,6 +20,7 @@ const appRoutes: Routes = [{
     { path: 'bolo', component: BoloListComponent },
     { path: 'paises', component: ListaPaisesComponent },
     { path: 'template', component: TemplateDrivenComponent },
+    { path: 'modelform', component: ModelDrivenComponent },
   ]
 }];
 
@@ -26,12 +28,10 @@ const appRoutes: Routes = [{
   declarations: [
     AppComponent,
     BoloListComponent,
-    PagLayoutComponent,
-    TemplateDrivenComponent,
-    ModelDrivenComponent
+    PagLayoutComponent
   ],
   imports: [
-    BrowserModule, FormsModule, PaisesModule, BrowserAnimationsModule,
+    BrowserModule, FormsModule, PaisesModule, BrowserAnimationsModule, LocalFormModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [],
