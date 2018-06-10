@@ -9,10 +9,22 @@ import { Injectable } from '@angular/core';
 })
 export class CustomValidators {
     constructor(public cepService: PesquisaCEPService) { }
-    ///https://www.concretepage.com/angular-2/angular-custom-async-validator-example
+    // https://www.concretepage.com/angular-2/angular-custom-async-validator-example
     public cep(control: AbstractControl) {
+        let val: string = control.value;
+
+        if ( val.length < 8) {
+            return of({ 'cep': true });
+        }
+
+        val = val.replace('-', '');
+
+        if ( val.length > 8) {
+            return of({ 'cep': true });
+        }
+
         return this.cepService.buscaCep(control.value).pipe(
-            map(() => {of({ 'cep': false });}),
+            map(() => {of({ 'cep': false }); }),
             catchError(
                 (e, c) => {
                     return of({ 'cep': true });

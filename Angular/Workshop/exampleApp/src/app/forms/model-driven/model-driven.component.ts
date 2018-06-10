@@ -30,7 +30,7 @@ export class ModelDrivenComponent implements OnInit {
       nome: ['', Validators.required ],
       endereco : ['', Validators.required ],
       idade: ['', [Validators.required, Validators.min(16)]],
-      cep: ['', [ ], this.customValidators.cep.bind(this.customValidators)]
+      cep: ['', [Validators.required ], this.customValidators.cep.bind(this.customValidators)]
     });
   }
 
@@ -39,7 +39,11 @@ export class ModelDrivenComponent implements OnInit {
   }
 
   public hiddeErroMsg(control: FormControl, error: string ): Boolean {
-    return !control.errors[error];
+    if ( control.errors != null) {
+      return !control.errors[error];
+    } else {
+      return true;
+    }
   }
 
 }
