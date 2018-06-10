@@ -17,5 +17,5 @@ export class TemplateDrivenComponent implements OnInit {
   ngOnInit() {
   }
 
-  public log(l:any){ console.log(l);}
+  public log(l: any) { console.log(l); }
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { FormModel2 } from './form-model2';
+import { CustomValidators } from './validacao/custom-validators';
 
 @Component({
   selector: 'app-model-driven',
@@ -13,7 +14,7 @@ export class ModelDrivenComponent implements OnInit {
   formModel: FormModel2;
   idadeMsgList: any;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, public customValidators: CustomValidators) {
     this.createForm();
 
     this.idadeMsgList = [];
@@ -29,6 +30,7 @@ export class ModelDrivenComponent implements OnInit {
       nome: ['', Validators.required ],
       endereco : ['', Validators.required ],
       idade: ['', [Validators.required, Validators.min(16)]],
+      cep: ['', [ ], this.customValidators.cep.bind(this.customValidators)]
     });
   }
 
