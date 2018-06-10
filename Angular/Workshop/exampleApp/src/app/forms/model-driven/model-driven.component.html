@@ -16,9 +16,10 @@
   <div class="form-group">
     <label for="idade">Idade</label>
     <input type="number" class="form-control" formControlName="idade">
-    <div [hidden]="pageForm.controls.idade.valid || pageForm.controls.idade.pristine" class="alert alert-danger" >
-      <span [hidden]="!pageForm.controls.idade.errors.required">Campo Obrigatório</span>
-      <span [hidden]="!pageForm.controls.idade.errors.min">Idade Mínima 16</span>
+    <div [hidden]="hiddeErro(pageForm.controls.idade)" class="alert alert-danger" >
+        <span *ngFor="let item of idadeMsgList" [hidden]="hiddeErroMsg(pageForm.controls.idade,item.key)">
+          {{item.msg}}
+        </span>
     </div>
   </div>
   <div>

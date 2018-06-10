@@ -11,9 +11,14 @@ export class ModelDrivenComponent implements OnInit {
 
   pageForm: FormGroup;
   formModel: FormModel2;
+  idadeMsgList: any;
 
   constructor(private fb: FormBuilder) {
     this.createForm();
+
+    this.idadeMsgList = [];
+    this.idadeMsgList.push({key: 'required', msg: 'Campo Obrigatório'});
+    this.idadeMsgList.push({key: 'min', msg: 'Idade Mínima 16'});
   }
 
   ngOnInit() {
@@ -23,8 +28,16 @@ export class ModelDrivenComponent implements OnInit {
     this.pageForm = this.fb.group({
       nome: ['', Validators.required ],
       endereco : ['', Validators.required ],
-      idade: ['',[ Validators.required, Validators.min(16)]],
+      idade: ['', [Validators.required, Validators.min(16)]],
     });
+  }
+
+  public hiddeErro(control: FormControl ): Boolean {
+    return control.valid || control.pristine;
+  }
+
+  public hiddeErroMsg(control: FormControl, error: string ): Boolean {
+    return !control.errors[error];
   }
 
 }
