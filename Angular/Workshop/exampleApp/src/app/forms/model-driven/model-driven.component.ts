@@ -34,6 +34,10 @@ export class ModelDrivenComponent implements OnInit {
     });
   }
 
+  public log(a: any ) {
+    console.log(a);
+  }
+
   public hiddeErro(control: FormControl ): Boolean {
     return control.valid || control.pristine;
   }

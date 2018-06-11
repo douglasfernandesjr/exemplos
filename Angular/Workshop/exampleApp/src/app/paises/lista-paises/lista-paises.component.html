@@ -18,6 +18,8 @@
   <input type="text" [formControl]="term" />
   <h3 *ngIf="semResultado">Nenhum resultado encontrado</h3>
   <ul *ngIf="!semResultado">
-    <li *ngFor="let item of items">{{item.name}}</li>
+    <li *ngFor="let item of items">
+     <app-pais-display [pais]="item" (notificacao)="eventoCallback($event)"></app-pais-display>
+    </li>
   </ul>
 </div>

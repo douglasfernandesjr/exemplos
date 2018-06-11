@@ -16,8 +16,9 @@
   <div class="form-group">
       <label for="CEP">CEP</label>
       <input type="text" class="form-control" formControlName="cep" >
-      <div [hidden]="hiddeErro(pageForm.controls.cep)" class="alert alert-danger" >
-        <span [hidden]=" hiddeErroMsg(pageForm.controls.cep,'cep')">CEP Inválido</span>
+      <div [hidden]="pageForm.controls.cep?.valid || pageForm.controls.cep?.pristine" (click)="log(pageForm.controls)" class="alert alert-danger" >
+        <span [hidden]="!pageForm.controls.cep?.errors?.required">Campo Obrigatório</span>
+        <span [hidden]="!pageForm.controls.cep?.errors?.cep">CEP Inválido</span>
       </div>
     </div>
   <div class="form-group">
@@ -30,6 +31,6 @@
     </div>
   </div>
   <div>
-    <button [disabled]="pageForm.invalid" class="btn">Salvar</button>
+    <button [disabled]="pageForm.invalid || pageForm.pending" class="btn">Salvar</button>
   </div>
 </form>

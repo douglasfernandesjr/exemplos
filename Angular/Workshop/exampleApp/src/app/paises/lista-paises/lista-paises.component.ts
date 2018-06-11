@@ -48,8 +48,8 @@ export class ListaPaisesComponent implements OnInit {
         ),
     ).subscribe(paises =>  { this.semResultado = false; this.items = paises; });
 
-    //https://blog.thoughtram.io/angular/2016/01/06/taking-advantage-of-observables-in-angular2.html  
-    //https://blog.angularindepth.com/switchmap-bugs-b6de69155524          
+    // https://blog.thoughtram.io/angular/2016/01/06/taking-advantage-of-observables-in-angular2.html
+    // https://blog.angularindepth.com/switchmap-bugs-b6de69155524
 
 
   }
@@ -61,4 +61,8 @@ export class ListaPaisesComponent implements OnInit {
     });
   }
 
+  public eventoCallback(event) {
+    console.log('Evento de Call Back');
+  }
+  // https://medium.com/@danilodev.silva/angular-5-eventemitter-aprendendo-a-usar-input-e-output-property-56df9158de6b
 }
