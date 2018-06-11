@@ -21,6 +21,7 @@ const appRoutes: Routes = [{
     { path: 'paises', component: ListaPaisesComponent },
     { path: 'template', component: TemplateDrivenComponent },
     { path: 'modelform', component: ModelDrivenComponent },
+    { path: 'adm', loadChildren: './admin/admin.module#AdminModule'},
   ]
 }];
 
@@ -33,6 +34,7 @@ const appRoutes: Routes = [{
   imports: [
     BrowserModule, FormsModule, PaisesModule, BrowserAnimationsModule, LocalFormModule,
     RouterModule.forRoot(appRoutes)
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

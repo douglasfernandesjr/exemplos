@@ -1,0 +1,19 @@
+<form #form="ngForm" name="formModel">
+  <div class="form-group">
+    <label for="usuario">usuario</label>
+    <input type="text" class="form-control"  name="usuario" [(ngModel)]="loginValue"  #usuario="ngModel" required>
+    <div [hidden]="usuario.valid || usuario.pristine" class="alert alert-danger" >
+      <span [hidden]="!usuario.errors?.required">Campo Obrigatório</span>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="senha">senha</label>
+    <input type="text" class="form-control"   name="senha" [(ngModel)]="senhaValue"  #senha="ngModel"  required>
+    <div [hidden]="senha.valid || senha.pristine" class="alert alert-danger" >
+      <span [hidden]="!senha.errors?.required">Campo Obrigatório</span>
+    </div>
+  </div>
+  <div>
+    <button [disabled]="form.invalid" type="button" (click)="logIn()" class="btn">Salvar</button>
+  </div>
+</form>
