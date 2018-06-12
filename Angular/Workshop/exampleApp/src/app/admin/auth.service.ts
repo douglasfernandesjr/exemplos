@@ -8,7 +8,7 @@ export class AuthService {
   public redirectUrl: string;
   constructor() { }
 
-  login(usr:string, pwd:string){
+  login(usr: string, pwd: string) {
     this.isLoggedIn = true;
     return true;
   }

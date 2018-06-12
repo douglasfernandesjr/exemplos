@@ -15,7 +15,7 @@ export class PaisDisplayComponent implements OnInit {
   }
 
   onClick () {
-    console.log("Display Paises Click");
+    console.log('Display Paises Click');
     this.notificacao.emit();
   }
 }

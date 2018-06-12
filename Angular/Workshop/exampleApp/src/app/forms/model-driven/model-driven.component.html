@@ -24,8 +24,8 @@
   <div class="form-group">
     <label for="idade">Idade</label>
     <input type="number" class="form-control" formControlName="idade">
-    <div [hidden]="hiddeErro(pageForm.controls.idade)" class="alert alert-danger" >
-        <span *ngFor="let item of idadeMsgList" [hidden]="hiddeErroMsg(pageForm.controls.idade,item.key)">
+    <div [hidden]="hiddeErro(pageForm.get('idade')['controls'])" class="alert alert-danger" >
+        <span *ngFor="let item of idadeMsgList" [hidden]="hiddeErroMsg(pageForm.get('idade')['controls'],item.key)">
           {{item.msg}}
         </span>
     </div>

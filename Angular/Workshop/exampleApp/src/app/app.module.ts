@@ -12,6 +12,8 @@ import { PagLayoutComponent } from './layout/pag-layout/pag-layout.component';
 import { TemplateDrivenComponent } from './forms/template-driven/template-driven.component';
 import { ModelDrivenComponent } from './forms/model-driven/model-driven.component';
 import { LocalFormModule } from './forms/form.module';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpInterceptorService } from './admin/http-interceptor.service';
 
 const appRoutes: Routes = [{
   path: '',
@@ -21,7 +23,7 @@ const appRoutes: Routes = [{
     { path: 'paises', component: ListaPaisesComponent },
     { path: 'template', component: TemplateDrivenComponent },
     { path: 'modelform', component: ModelDrivenComponent },
-    { path: 'adm', loadChildren: './admin/admin.module#AdminModule'},
+    { path: 'adm', loadChildren: './admin/admin.module#AdminModule' },
   ]
 }];
 
@@ -34,9 +36,13 @@ const appRoutes: Routes = [{
   imports: [
     BrowserModule, FormsModule, PaisesModule, BrowserAnimationsModule, LocalFormModule,
     RouterModule.forRoot(appRoutes)
-    
+
   ],
-  providers: [],
+  providers: [ {
+    provide: HTTP_INTERCEPTORS,
+    useClass: HttpInterceptorService,
+    multi: true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

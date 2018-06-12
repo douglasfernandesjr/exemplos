@@ -8,16 +8,17 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  loginValue: string = "";
-  senhaValue: string = "";
+  loginValue = '';
+  senhaValue = '';
   constructor(private auth: AuthService, private router: Router) { }
 
   ngOnInit() {
   }
 
   logIn() {
-    this.auth.login(this.loginValue, this.senhaValue);
-    let redirect = this.auth.redirectUrl ? this.auth.redirectUrl : '/admin/admin';
-    this.router.navigate([redirect]);
+    if (this.auth.login(this.loginValue, this.senhaValue)) {
+      const redirect = this.auth.redirectUrl ? this.auth.redirectUrl : '/admin/admin';
+      this.router.navigate([redirect]);
+    }
   }
 }
