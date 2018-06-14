@@ -4,17 +4,17 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 @Component({
-  selector: 'nav-menu',
-  templateUrl: './nav-menu.component.html',
-  styleUrls: ['./nav-menu.component.css']
+  selector: 'app-side-menu-page-layout',
+  templateUrl: './side-menu-page-layout.component.html',
+  styleUrls: ['./side-menu-page-layout.component.css']
 })
-export class NavMenuComponent {
+export class SideMenuPageLayoutComponent {
 
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
     .pipe(
       map(result => result.matches)
     );
-    
-  constructor(private breakpointObserver: BreakpointObserver) {}
-  
-  }
+
+  constructor(private breakpointObserver: BreakpointObserver) { }
+
+}
