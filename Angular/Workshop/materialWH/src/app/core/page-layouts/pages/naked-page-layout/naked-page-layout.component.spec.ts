@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { NakedPageLayoutComponent } from './naked-page-layout.component';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('NakedPageLayoutComponent', () => {
   let component: NakedPageLayoutComponent;
@@ -8,9 +9,10 @@ describe('NakedPageLayoutComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ NakedPageLayoutComponent ]
+      declarations: [NakedPageLayoutComponent],
+      imports: [RouterTestingModule]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
