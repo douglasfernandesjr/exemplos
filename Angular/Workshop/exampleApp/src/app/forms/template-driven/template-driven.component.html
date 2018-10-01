@@ -2,7 +2,7 @@
   <div class="form-group">
     <label for="nome">Nome</label>
     <input type="text" class="form-control" [(ngModel)]="model.nome" name="nome"  #nome="ngModel" required>
-    <div [hidden]="nome.valid || nome.pristine" class="alert alert-danger" >
+    <div [hidden]="nome.valid || nome.pristine"    >
       <span [hidden]="!nome.errors || !nome.errors.required">Campo Obrigatório</span>
     </div>
   </div>

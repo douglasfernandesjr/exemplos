@@ -38,16 +38,6 @@ export class ModelDrivenComponent implements OnInit {
     console.log(a);
   }
 
-  public hiddeErro(control: FormControl ): Boolean {
-    return control.valid || control.pristine;
-  }
-
-  public hiddeErroMsg(control: FormControl, error: string ): Boolean {
-    if ( control.errors != null) {
-      return !control.errors[error];
-    } else {
-      return true;
-    }
-  }
+  
 
 }
