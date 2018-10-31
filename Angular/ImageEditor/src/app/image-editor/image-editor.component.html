@@ -1,0 +1,40 @@
+<div class="top">
+  <input #image type="file" (change)="loadImage()" />
+</div>
+<div class="image-display">
+  <img id="output" *ngIf="imageDisplay" [src]="imagePreview" />
+  <canvas [style.display]="canvasDisplay? 'block' : 'none'" #imageCanvas ></canvas>
+  <angular-cropper *ngIf="cropperEditor" #angularCropper [cropperOptions]="cropperOptions" [imageUrl]="cropperEditorPreview"></angular-cropper>
+</div>
+
+
+<div class="controls"></div>
+<div *ngIf="imageDisplay">
+  <button (click)="startCrop()">
+    Crop
+  </button>
+  <button (click)="startCanvas()">
+    Canvas
+  </button>
+</div>
+<div *ngIf="cropperEditor">
+  <button ion-button outline icon-left color="primary" (click)="zoom(true)">
+    Zoom
+  </button>
+  <button ion-button outline icon-left color="primary" (click)="zoom(false)">
+    Zoom
+  </button>
+  <button ion-button outline icon-left (click)="rotate()">
+    90 deg
+  </button>
+  <button ion-button outline icon-left (click)="save()">
+    Save Crop
+  </button>
+</div>
+<div *ngIf="canvasDisplay">
+  <input type="color"/>
+  <button ion-button outline icon-left (click)="saveCanvas()">
+    Save Canvas
+  </button>
+  
+</div>
